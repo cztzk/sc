@@ -1,0 +1,158 @@
+/* pages/user/user.wxss */
+.user_box{
+  background: #fff;
+}
+.user_box.active{
+  overflow: hidden;
+}
+.user_warp {
+  padding: 30rpx 0;
+}
+
+.user_img {
+  text-align: center;
+  width: 170rpx;
+}
+
+.user_img image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 15rpx;
+}
+
+.user_info {
+  width: 580rpx;
+}
+
+.user_name {
+  margin-bottom: 15rpx;
+  font-size: 36rpx;
+}
+
+.user_balance {
+  font-size: 28rpx;
+  color: #9c9c9c;
+}
+
+.user_btn {
+  border-top: 2rpx solid #e6e6e6;
+  border-bottom: 20rpx solid #f2f2f2;
+}
+
+.user_btn_item {
+  width: 50%;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.user_btn_item image {
+  width: 47rpx;
+  height: 46rpx;
+  vertical-align: middle;
+  padding-right: 15rpx;
+}
+
+.user_btn_item text {
+  vertical-align: middle;
+}
+
+.navigator-hover {
+  background: #fff;
+}
+
+.erweima_mask{
+  position: fixed;
+  z-index: 99;
+  background: rgba(0,0,0,.7);
+  transition: all .5s linear;
+  top: -100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  
+}
+.erweima_mask.active{
+  top: 0;
+}
+.erweima_mask image{
+  width: 530rpx;
+  height: 750rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.order_class_btn{
+  border-bottom: 20rpx solid #f2f2f2;
+}
+.order_title>view,
+.order_title navigator {
+  padding: 35rpx 30rpx;
+  border-bottom: 2rpx solid #e6e6e6;
+}
+
+.order_title navigator text {
+  font-size: 30rpx;
+}
+
+.right_box {
+  position: relative;
+}
+
+.right_box .right_img {
+  width: 25rpx;
+  height: 25rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50rpx;
+}
+.order_class_btn_item{
+  width: 25%;
+  padding: 35rpx 0 25rpx;
+}
+.order_class_btn_item image{
+  width:82rpx;
+  height: 62rpx;
+}
+.order_class_btn_item_info text,
+.other_btn_item_info text{
+  font-size: 26rpx;
+}
+.other_btn{
+  border-bottom:  2rpx solid #d9d9d9;
+}
+.other_btn_item{
+  width: 250rpx;
+  padding: 40rpx 0;
+  border-right: 2rpx solid #d9d9d9;
+  border-top: 2rpx solid #d9d9d9;
+  box-sizing: border-box;
+}
+.other_btn>.other_btn_item:nth-child(3),
+.other_btn>.other_btn_item:nth-child(6){
+  border-right: none;
+}
+.other_btn_item image{
+  width: 90rpx;
+  height: 74rpx;
+}
+.kefuwarp{
+  margin: 25rpx 0 60rpx;
+  padding: 0 30rpx;
+  height: 100rpx;
+  position: relative;
+  overflow-x: hidden;
+}
+.kefuwarp>button{
+  background: red;
+  color: #fff;
+  font-size: 28rpx;
+  position: absolute;
+  left: 30rpx;
+  right: 30rpx;
+  z-index: 20;
+}
+
+.kefuwarp contact-button{
+  opacity: 0;
+}

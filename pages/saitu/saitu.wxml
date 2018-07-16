@@ -1,0 +1,54 @@
+<!--pages/saitu/saitu.wxml-->
+<view class='saitu_warp'>
+  <view class='flex_nowarp saitu_warp_header'>
+    <view class='text-left'>
+      我的嗮图
+    </view>
+    <view class='text-right'>
+      <navigator url='/pages/addsaitu/addsaitu' hover-class="navigator-hover">
+        <image src='../../images/saitu_icon.jpg'></image>
+        <text>我要嗮图</text>
+      </navigator>
+    </view>
+  </view>
+  <view class='saitu_list flex_warp'>
+    <view class='saitu_item ' wx:for="{{saitu}}" wx:key="index">
+      <view class='saitu_item_header flex-warp'>
+        <image src='{{userInfo.avatarUrl}}'></image>
+        <view>{{userInfo.nickName}}</view>
+      </view>
+      <view class='saitu_item_body'>
+        <image src='{{item.img}}'></image>
+      </view>
+      <view class='saitu_item_footer flex_nowarp'>
+        <view class='date'>
+          <image src=' ../../images/date.jpg'></image>
+          {{item.date}}
+        </view>
+        <view class='comment' bindtap='commentfun' data-id="{{index}}">
+          <image src=' ../../images/comment.jpg'></image>
+          {{item.comment.length}}
+        </view>
+        <view class='praise' bindtap='praisefun' data-id="{{index}}">
+          <image src=' ../../images/praise.jpg' wx-if="{{!item.ispraise}}"></image>
+          <image src=' ../../images/praise_active.jpg' wx-if="{{item.ispraise}}"></image>
+          {{item.praise}}
+        </view>
+      </view>
+      <view class='comment_list' wx-if="{{item.iscomment}}">
+        <view class='commen_item' wx:for="{{item.comment}}" wx:for-item="items" wx:for-index="idx" wx:key="idx">
+          <view class='commen_item_header'>
+            {{items.cont}}
+          </view>
+          <view class='commen_item_body text-right'>
+            {{items.name}}于{{items.date}}发表
+          </view>
+        </view>
+      </view>
+      <view class='msg text-right'>
+        <textarea placeholder='这是留言内容' bindblur='msgfun' data-id="{{index}}"></textarea>
+        <view class='msg_btn' data-id="{{index}}" bindtap='submit'>提交</view>
+      </view>
+    </view>
+  </view>
+</view>

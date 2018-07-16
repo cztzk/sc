@@ -1,0 +1,147 @@
+<!--pages/productdetail/productdetail.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<!-- 轮播 -->
+<view class='detail_warp {{detailmaskboxactive?"active":""}}'>
+  <view class='banner_warp'>
+    <swiper class="banner" indicator-dots="true" circular="true" indicator-color="rgba(255,255,255,.6)" indicator-active-color="#fff" autoplay="true" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{info.pics}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.pic}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='detail_info'>
+    <view class='detail_info_title'>{{info.basicInfo.name}}</view>
+    <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+    <view class='detail_info_price'>￥{{filter.getPriceFormat(info.basicInfo.minPrice)}}</view>
+    <view class='detail_info_express'>支持圆通</view>
+    <view class='detail_info_img' wx-if="{{info.basicInfo.recommendStatus!=0}}">
+      <image src='../../images/tui_icon.jpg'></image>
+    </view>
+  </view>
+  <view class='choose_warp  right_box flex_nowarp' bindtap='maskclick'>
+    <image src='../../images/user/right.jpg' class='right_img'></image>
+    <view class='detail_mask_header_info_maskchooseinfo flex_nowarp'>
+      {{maskchooseinfo}}
+    </view>
+    <view wx:for="{{propertiesdata}}" wx:key="index" class='maskchoose_info'>
+      {{item}}
+      <text class='maskchoose_info_icon'> / </text>
+    </view>
+  </view>
+  <view class='detail_btn flex_nowarp'>
+    <view class='detail_btn_item text-center'>
+      <navigator url='/pages/{{detailbtn1.url}}/{{detailbtn1.url}}' hover-class="navigator-hover">
+        <text>{{detailbtn1.title}}</text>
+      </navigator>
+    </view>
+    <view class='detail_btn_item text-center'>
+      <navigator url='/pages/{{detailbtn2.url}}/{{detailbtn2.url}}' hover-class="navigator-hover" bindtap='toindex'>
+        <text>{{detailbtn2.title}}</text>
+      </navigator>
+    </view>
+  </view>
+  <import src="../../wxParse/wxParse.wxml" />
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:detail.nodes}}" />
+  </view>
+  <!-- 产品相关参数 -->
+  <view class='detail_mask_box {{detailmaskboxactive?"active":""}}'>
+    <view class='detail_mask'>
+      <view class='detail_mask_header'>
+        <view class='detail_mask_header_img'>
+          <image src='{{info.basicInfo.pic}}'></image>
+        </view>
+        <view class='detail_mask_header_info'>
+          <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+          <view class='detail_mask_header_info_pirce'>￥{{filter.getPriceFormat(info.basicInfo.minPrice)}}</view>
+          <view class='detail_mask_header_info_name'>库存数：{{info.basicInfo.stores}}</view>
+          <view class='detail_mask_header_info_maskchooseinfo flex_nowarp'>
+            <view>
+              {{maskchooseinfo}}
+            </view>
+            <view wx:for="{{propertiesdata}}" wx:key="index" class='flex_nowarp'>
+              {{item}}
+              <view>/</view>
+            </view>
+          </view>
+        </view>
+        <view class='close_icon' bindtap='closefun'>x</view>
+      </view>
+      <view class='detail_mask_body'>
+        <view class='detail_mask_body_item' wx:for="{{properties}}" wx:key="index">
+          <view class='detail_mask_body_title'>{{item.name}}</view>
+          <view class='detail_mask_body_info flex_waro'>
+            <view wx:for="{{item.childsCurGoods}}" wx:for-item="items" wx:key="idx" wx:for-index="idx" data-row='{{index}}' data-col='{{idx}}' data-cont="{{items.name}}" data-propertyId='{{items.propertyId}}' data-propertyIds='{{items.id}}' bindtap='propertiesfun'
+              class='{{propertiessum[index]==idx?"active":""}}'>
+              {{items.name}}
+            </view>
+          </view>
+        </view>
+        <view class='detail_mask_body_title'>数量</view>
+        <view class="stepper">
+          <!-- 减号 -->
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+          <!-- 数值 -->
+          <input type="number" bindchange="bindManual" value="{{num}}" />
+          <!-- 加号 -->
+          <text class="{{maxusStatus}}" bindtap="bindPlus">+</text>
+        </view>
+      </view>
+      <view class='detail_mask_footer'>
+        <view bindtap='confirmfun'>确认</view>
+      </view>
+    </view>
+
+  </view>
+  <!-- 底部导航 -->
+  <view class='footer flex_nowarp'>
+    <view class='footer_btn flex_nowarp'>
+      <view class='footer_btn_item text-center kefu'>
+        <view class='kefu_btn'>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+        </view>
+        <image src='../../images/footer_1.jpg'></image>
+        <view class='footer_item_info'>客服</view>
+      </view>
+      <view class='footer_btn_item text-center' bindtap='lickfun'>
+        <image src='../../images/footer_2.jpg' wx-if="{{numberFav==0}}"></image>
+        <image src='../../images/footer_2_active.jpg' wx-if="{{numberFav==1}}"></image>
+        <view class='footer_item_info'>喜欢</view>
+      </view>
+      <view class='footer_btn_item text-center'>
+        <navigator url='/pages/cart/cart' hover-class="navigator-hover">
+          <image src='../../images/footer_3.jpg'></image>
+          <view class='footer_item_info'>购物车</view>
+        </navigator>
+      </view>
+    </view>
+    <view class='footer_cart_btn'>
+      <view bindtap='tocart' class='{{join?"active":""}}'>{{footercartbtn}}</view>
+    </view>
+  </view>
+</view>

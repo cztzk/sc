@@ -1,0 +1,56 @@
+/* pages/commission/commission.wxss */
+/* pages/wallet/wallet.wxss */
+.wallet_warp{
+  min-height: 100vh;
+  background: #f2f2f2;
+}
+.wallet_header{
+  padding: 60rpx 140rpx 30rpx;
+  background: #b21b2c;
+}
+.wallet_header_total{
+  color: #fff;
+  font-size: 80rpx;
+}
+.wallet_header_btn{
+  font-size: 36rpx;
+  margin: 50rpx 0 40rpx;
+  background: #fff;
+  color: #a5a5a5;
+  border-radius: 10rpx;
+  padding: 25rpx 0;
+}
+.wallet_header_info image{
+  width: 45rpx;
+  height: 37rpx;
+  vertical-align: middle;
+  padding-right: 10rpx;
+}
+.wallet_header_info text{
+  color: #fff;
+  font-size: 24rpx;
+}
+.wallet_body_title{
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.wallet_body_title_mask{
+  width: 25%;
+  position: absolute;
+  bottom: 0;
+  height: 3rpx;
+  background: #12ac10;
+  transition: all .5s linear;
+}
+.wallet_body_title_item{
+  width: 25%;
+  font-size: 30rpx;
+  color: #969696;
+  padding: 40rpx 0;
+}
+.wallet_body_title_item.active{
+  color: #12ac10;
+}
+.wallet_body_body>view{
+  padding-top: 40rpx;
+}

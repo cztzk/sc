@@ -1,0 +1,20 @@
+<!--pages/join/join.wxml-->
+<view class='join_warp'>
+  <view class='join_header'>分销客服QQ：123456789</view>
+  <view class='join_header'>
+    首先感谢各位代销选择XXX,为了一个公平的竞争环境，本着你我双方互利共赢原则，特此说明。
+  </view>
+  <view class='join_title'>代销资格</view>
+  <view class='join_title_info'>
+    一件代发网络销售店铺必须大于或者等于3钻，店 铺风格符合；
+  </view>
+  <view class='join_title_info'>
+    实体须持有正规的营业执照； ·已为独立法人资格；
+  </view>
+  <view class='join_title_info'>
+    具有一定的市场运作能力和相应的销售渠道；
+  </view>
+  <view class='join_title_info'>
+    需按甲方知道零售价销售；
+  </view>
+</view>

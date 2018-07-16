@@ -1,0 +1,30 @@
+<!--pages/wallet/wallet.wxml-->
+<view class='wallet_warp'>
+  <view class='wallet_header text-center'>
+    <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+    <view class='wallet_header_total'>￥{{filter.getPriceFormat(total)}}</view>
+    <view class='wallet_header_btn'>
+      <navigator url='/pages/recharge/recharge' hover-class='navigator-hover'>
+        在线充值
+      </navigator>
+    </view>
+    <view class='wallet_header_info'>
+      <image src='../../images/wallet.png'></image>
+      <text>如有问题请联系客服</text>
+    </view>
+  </view>
+  <view class='wallet_body'>
+    <view class='wallet_body_title flex_nowarp text-center'>
+      <view class='wallet_body_title_mask' style="left: {{activeid * 25}}%"></view>
+      <view class="wallet_body_title_item {{activeid==item.id?'active':''}}" 
+      wx:for="{{title}}" wx:key="index" bindtap='clicktab' data-id='{{index}}'>
+        {{item.title}}
+      </view>
+    </view>
+    <view class='wallet_body_body' wx-if="{{activeid==item.id}}" wx:for="{{title}}" wx:key="index">
+      <view class='text-center'>
+        {{item.content}}
+      </view>
+    </view>
+  </view>
+</view>

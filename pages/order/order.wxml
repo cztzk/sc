@@ -1,0 +1,45 @@
+<!--pages/order/order.wxml-->
+<view class='order_warp'>
+  <view class='order_title' wx-if="{{status==5}}">
+    全部订单
+  </view>
+  <view class='order_title' wx-if="{{status==0}}">
+    待付款
+  </view>
+  <view class='order_title' wx-if="{{status==1}}">
+    待发货
+  </view>
+  <view class='order_title' wx-if="{{status==2}}">
+    待收货
+  </view>
+  <view class='order_title' wx-if="{{status==3}}">
+    已评价
+  </view>
+  <view class='order_list'>
+    <view class='order_item' wx:for="{{orderList}}" wx:key="index">
+      <view class='order_item_head flex_nowarp'>
+        <view class='order_item_head_info'>
+          <view class='order_item_head_orderNumber'>单号：{{item.orderNumber}}</view>
+          <view class='order_item_head_date'>{{item.dateAdd}}</view>
+        </view>
+        <view class='order_item_head_status'>
+          {{item.statusStr}}
+        </view>
+      </view>
+      <view class='order_item_body flex_nowarp'>
+        <view class='order_item_body_price '>
+          <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+          合计：￥{{filter.getPriceFormat(item.amountReal)}}
+        </view>
+        <view class='order_item_body_btn text-right'>
+          <view bindtap='todetail'>
+            订单详情
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='nomore' wx-hidden='{{!nomore}}'>
+    没有更多数据
+  </view>
+</view>

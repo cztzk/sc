@@ -1,0 +1,25 @@
+<!--pages/chooseaddr/chooseaddr.wxml-->
+<import src="../../template/cascade.wxml" />
+<view class='chooseaddr'>
+  <view class='input_box'>
+    <input placeholder='请输入收货人姓名' value='{{name}}' bindblur='checkname'></input>
+  </view>
+  <view class='input_box'>
+    <input placeholder='请输入收货人手机号' type='tel' value='{{phone}}' bindblur='checkphone'></input>
+  </view>
+  <view bindtap="clickfun" class='picker_warp flex_nowarp'>
+    <view>{{choose.province}}</view>
+    <view>{{choose.city}}</view>
+    <view>{{choose.area}}</view>
+  </view>
+  <view class='input_box'>
+    <input placeholder='请输入收货地址' value='{{addr}}' bindblur='checkaddr'></input>
+  </view>
+  <view class='input_box errmsg' hidden='{{err}}'>
+    {{errmsg}}
+  </view>
+  <template is="cascade" data="{{animationData:animationData,province:province,city:city,area:area}}" />
+  <view class='saveaddr_btn' bindtap='saveaddrfun'>
+    <view>提交</view>
+  </view>
+</view>

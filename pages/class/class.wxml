@@ -1,0 +1,19 @@
+<!--pages/class/class.wxml-->
+<view class='class_warp text-center'>
+  <view class='class_item' wx:for="{{first}}" wx:key="index">
+    <view class='class_header'>
+      <view class='class_eng'>{{item.type}}</view>
+      <view class='class_item_title'>{{item.name}}</view>
+    </view>
+    <view class='class_child_list flex_warp'>
+      <view class='class_child_item' wx:for="{{second[index]}}" wx:for-item="items"
+       wx:key="idx" wx:for-index="idx" data-id="{{items.id}}" bindtap='toclassfun'>
+        <view class='class_child_item_icon'>
+          <image src="{{items.icon}}"></image>
+        </view>
+        <view class='class_child_item_eng'>{{items.type}}</view>
+        <view class='class_child_item_title'>{{items.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

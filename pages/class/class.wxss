@@ -1,0 +1,51 @@
+/* pages/class/class.wxss */
+.class_warp{
+  background: #f2f2f2;
+}
+.class_eng {
+  position: relative;
+  font-size: 26rpx;
+  color: #fff;
+  background: #000;
+  display: inline-block;
+  margin: 60rpx auto 10rpx;
+  padding: 5rpx 20rpx;
+  overflow: visible;
+  z-index: 10;
+}
+
+.class_eng:after {
+  display: block;
+  content: "";
+  background: #000;
+  width: 680rpx;
+  height: 2rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+}
+
+.class_item_title {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.class_child_item {
+  width: 33.3%;
+  margin-bottom: 35rpx;
+}
+
+.class_child_item_icon image {
+  width: 175rpx;
+  height: 175rpx;
+}
+
+.class_child_item_eng {
+  font-size: 18rpx;
+}
+
+.class_child_item_title {
+  font-size: 24rpx;
+}

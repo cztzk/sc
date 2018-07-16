@@ -1,0 +1,86 @@
+/* pages/recharge/recharge.wxss */
+
+.recharge_warp {
+  padding: 0 18rpx;
+}
+
+.recharge_warp_header {
+  margin: 60rpx 0 20rpx;
+  font-size: 38rpx;
+}
+
+.recharge_list {
+  width: 642rpx;
+  margin: 0 auto;
+}
+
+.echarge_item {
+  width: 48%;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 22rpx 0;
+  margin-top: 25rpx;
+  border-radius: 20rpx;
+}
+
+.echarge_item.active {
+  border: 1px solid #09bb07;
+}
+
+.recharge_list .echarge_item:nth-child(odd) {
+  margin-right: 2%;
+}
+
+.recharge_list .echarge_item:nth-child(even) {
+  margin-left: 2%;
+}
+
+.cont {
+  font-size: 30rpx;
+}
+
+.song {
+  font-size: 42rpx;
+}
+
+.radio-group {
+  padding-top: 40rpx;
+}
+
+.radio {
+  font-size: 24rpx;
+  color: #969595;
+}
+
+.recharge_warp_footer_btn {
+  margin: 40rpx auto;
+  background: #ddd;
+  padding: 25rpx 0;
+  width: 650rpx;
+  color: #000;
+  border-radius: 20rpx;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.recharge_warp_footer_btn.active {
+  background: #09bb07;
+  color: #fff;
+}
+
+.explain {
+  padding: 0 55rpx 60rpx;
+}
+
+.explain_title {
+  font-size: 36rpx;
+  color: #464646;
+  margin-bottom: 20rpx;
+}
+
+.explain_item {
+  font-size: 30rpx;
+  line-height: 36rpx;
+  margin-bottom: 15rpx;
+  color: #9e9e9e;
+}

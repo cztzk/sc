@@ -1,0 +1,308 @@
+/* pages/productdetail/productdetail.wxss */
+
+page {
+  margin-bottom: 140rpx;
+}
+
+.detail_warp.active {
+  overflow: hidden;
+}
+
+.banner, .banner image {
+  width: 750rpx;
+  height: 750rpx;
+  display: block;
+}
+
+.detail_info {
+  position: relative;
+  padding: 25rpx 80rpx 30rpx 18rpx;
+}
+
+.detail_info_title {
+  font-size: 40rpx;
+}
+
+.detail_info_price {
+  font-size: 44rpx;
+  color: #a10600;
+  margin: 15rpx 0 20rpx;
+}
+
+.detail_info_express {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.detail_info_img {
+  position: absolute;
+  right: 18rpx;
+  top: 80rpx;
+}
+
+.detail_info_img image {
+  width: 57rpx;
+  height: 58rpx;
+}
+
+.choose_warp {
+  padding: 35rpx 30rpx;
+  background: #f8f8f8;
+  border-bottom: 20rpx solid #f2f2f2;
+}
+
+.choose_warp text {
+  font-size: 30rpx;
+  color: #2f2f2f;
+}
+
+.right_box {
+  position: relative;
+}
+
+.right_box .right_img {
+  width: 25rpx;
+  height: 25rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 50rpx;
+}
+
+.detail_btn_item {
+  width: 50%;
+  padding: 20rpx 0;
+}
+
+.detail_btn_item navigator {
+  font-size: 30rpx;
+  color: #000;
+  width: 300rpx;
+  margin: 0 auto;
+  padding: 25rpx 0;
+  border-radius: 25rpx;
+  border: 2rpx solid #d7d7d7;
+}
+
+.detail_mask_box {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  transition: all 1s linear;
+  overflow: visible;
+  vertical-align: bottom;
+}
+.detail_mask_box::after{
+  display: block;
+  content:"";
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.7);
+}
+.detail_mask_box.active {
+  bottom: 0%;
+}
+
+.detail_mask {
+  overflow: visible;
+  background: #fff;
+  padding: 15rpx 18rpx;
+}
+
+.detail_mask_header {
+  position: relative;
+  padding: 15rpx 0;
+  border-bottom: 1px solid #ddd;
+  overflow: visible;
+}
+
+.detail_mask_header_img {
+  position: absolute;
+  left: 0rpx;
+  bottom: 15rpx;
+  z-index: 150;
+  overflow: visible;
+  border-radius: 15rpx;
+  background: #fff;
+  padding: 10rpx;
+}
+
+.detail_mask_header_img image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 15rpx;
+  vertical-align: middle;
+}
+
+.detail_mask_header_info {
+  padding-left: 240rpx;
+}
+
+.detail_mask_header_info_pirce {
+  font-size: 30rpx;
+  color: #a10600;
+}
+
+.detail_mask_header_info_name,
+.maskchoose_info_icon,
+.maskchoose_info,
+.detail_mask_header_info_maskchooseinfo {
+  font-size: 26rpx;
+  line-height: 26rpx;
+}
+
+.detail_mask_header .close_icon {
+  position: absolute;
+  right: 18rpx;
+  top: 20rpx;
+  font-size: 30rpx;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ddd;
+  color: #000;
+  text-align: center;
+  line-height: 35rpx;
+}
+
+.detail_mask_body {
+  border-bottom: 1px solid #ddd;
+  padding: 18rpx;
+}
+
+.detail_mask_body_title {
+  font-size: 30rpx;
+}
+
+.detail_mask_body_info>view {
+  font-size: 26rpx;
+  padding: 5rpx 10rpx;
+  margin: 10rpx;
+  margin-left: 0;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+}
+
+.detail_mask_body_info>view.active {
+  color: #fff;
+  background: #a10600;
+}
+.choose_warp .maskchoose_info:last-child text,
+.detail_mask_header_info_maskchooseinfo>view:last-child>view {
+  display: none;
+}
+
+.stepper {
+  width: 92px;
+  height: 26px;
+  /*给主容器设一个边框*/
+  border: 1px solid #ccc;
+  margin: 15rpx 0;
+  border-radius: 3px;
+}
+
+/*加号和减号*/
+
+.stepper text {
+  width: 25px;
+  line-height: 24px;
+  text-align: center;
+  float: left;
+  vertical-align: middle;
+}
+
+/*数值*/
+
+.stepper input {
+  width: 40px;
+  height: 26px;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  /*给中间的input设置左右边框即可*/
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: black;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+.detail_mask_footer>view {
+  background: #a10600;
+  padding: 30rpx 0;
+  border-radius: 15rpx;
+  margin: 20rpx auto;
+  width: 650rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.footer {
+  position: fixed;
+  height: 120rpx;
+  overflow: hidden;
+  padding: 0 18rpx;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f2f2f2;
+  z-index: 99;
+}
+
+.footer>view {
+  width: 50%;
+}
+
+.footer_btn_item {
+  width: 33.333%;
+  vertical-align: middle;
+}
+
+.footer_btn_item image {
+  width: 49rpx;
+  height: 49rpx;
+  padding-top: 20rpx;
+}
+
+.footer_btn_item view {
+  font-size: 26rpx;
+}
+
+.footer_cart_btn>view {
+  background: #ddd;
+  color: #fff;
+  text-align: center;
+  border-radius: 15rpx;
+  padding: 20rpx 0;
+  margin-top: 20rpx;
+}
+.footer_cart_btn>view.active{
+  background: #e54340;
+}
+.kefu{
+  position: relative;
+}
+.kefu_btn{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 140;
+  opacity: 0;
+}

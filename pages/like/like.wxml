@@ -1,0 +1,17 @@
+<view class='hot-box'>
+  <view class='hot-list flex_warp'>
+    <view class='hot-item' wx:for="{{hotlist}}" wx:key="index">
+      <navigator url='/pages/productdetail/productdetail?id={{item.goodsId}}'>
+        <view class='hot-img'>
+          <image src='{{item.pic}}'></image>
+        </view>
+        <view class='hot-pin'>{{item.goodsName}}</view>
+        <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+        <view class='hot-price'>价格：￥{{filter.getPriceFormat(item.minPrice)}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class='nomore' wx-if='{{nomore}}'>
+  <text>没有更多数据</text>
+</view>

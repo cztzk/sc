@@ -1,0 +1,97 @@
+/* pages/saitu/saitu.wxss */
+.saitu_warp{
+  min-height: 100vh;
+  background: #f2f2f2;
+}
+.saitu_item{
+  background: #fff;
+  margin-bottom: 40rpx;
+}
+.saitu_warp_header{
+  padding: 25rpx;
+}
+.saitu_warp_header>view{
+  width: 50%;
+  font-size: 30rpx;
+}
+.saitu_warp_header image{
+  width: 58rpx;
+  height: 45rpx;
+  vertical-align: middle;
+}
+.saitu_warp_header text{
+  font-size: 30rpx;
+  color: #b31414;
+}
+
+.saitu_item_header{
+  padding: 20rpx 25rpx;
+}
+.saitu_item_header image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.saitu_item_header view{
+  display: inline-block;
+  line-height: 100rpx;
+  padding-left: 20rpx;
+}
+.saitu_item_body image{
+  width: 750rpx;
+  height: 500rpx;
+}
+.saitu_item_footer{
+  padding: 20rpx 25rpx;
+}
+.saitu_item_footer image{
+   width: 52rpx;
+  height: 38rpx;
+  vertical-align: middle;
+}
+.saitu_item_footer>view{
+  width: 15%;
+  font-size: 24rpx;
+  color: #343434;
+}
+.saitu_item_footer>.date{
+  width: 70%;
+}
+.msg textarea{
+  width: 100%;
+  box-sizing: border-box;
+  height: 100px;
+  padding:0rpx 25rpx;
+  font-size: 30rpx;
+  text-align: left;
+}
+.msg_btn{
+  padding: 10rpx 30rpx;
+  display: inline-block;
+  background: #f2f2f2;
+  color: #343434;
+  font-size: 28rpx;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+}
+.comment_list .commen_item:first-child{
+  border-top: 1px solid #343434;
+}
+.commen_item{
+  margin-bottom: 15rpx;
+  padding: 15rpx 25rpx;
+  border-bottom: 1px solid #343434;
+}
+.commen_item_header{
+  font-size: 30rpx;
+  color: #343434;
+  line-height: 1.5em;
+  padding-bottom: 15rpx;
+}
+.commen_item_body{
+ font-size: 24rpx;
+  color: #343434;
+}
+.navigator-hover{
+  background: #f2f2f2;
+}

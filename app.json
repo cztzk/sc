@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/allproduct/allproduct",
+    "pages/productlist/productlist",
+    "pages/productdetail/productdetail",
+    "pages/recharge/recharge",
+    "pages/cart/cart",
+    "pages/discount/discount",
+    "pages/class/class",
+    "pages/saitu/saitu",
+    "pages/addsaitu/addsaitu",
+    "pages/binding/binding",
+    "pages/order/order",
+    "pages/preferential/preferential",
+    "pages/getpreferential/getpreferential",
+    "pages/like/like",
+    "pages/settlement/settlement",
+    "pages/chooseaddr/chooseaddr",
+    "pages/join/join",
+    "pages/wallet/wallet",
+    "pages/user/user",
+    "pages/commission/commission"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "tzk商城",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#666666",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/footer_icon_active_1.png",
+        "iconPath": "images/footer_icon_1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/footer_icon_active_2.png",
+        "iconPath": "images/footer_icon_2.png",
+        "pagePath": "pages/cart/cart",
+        "text": "购物车"
+      },
+      {
+        "selectedIconPath": "images/footer_icon_active_3.png",
+        "iconPath": "images/footer_icon_3.png",
+        "pagePath": "pages/class/class",
+        "text": "分类"
+      },
+      {
+        "selectedIconPath": "images/footer_icon_active_4.png",
+        "iconPath": "images/footer_icon_4.png",
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  }
+}

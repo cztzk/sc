@@ -1,0 +1,114 @@
+<!--pages/settlement/settlement.wxml-->
+<view class='settlement_warp'>
+  <view class='chooseaddr' wx-if="{{chooseaddr}}">
+    <view class='chooseaddr_list'>
+      <view class='chooseaddr_item'>
+        姓名：{{addrlist.name}}
+      </view>
+      <view class='chooseaddr_item'>
+        手机：{{addrlist.phone}}
+      </view>
+      <view class='chooseaddr_item'>
+        地址：{{addrlist.addr}}
+      </view>
+    </view>
+  </view>
+  <view class='nochooseaddr' wx-if="{{chooseaddr}}">
+    <navigator url="/pages/chooseaddr/chooseaddr" hover-class='navigator-hover'>
+      <view class='toaddr flex_nowarp right_box'>
+        <image src='../../images/addr.png' class='noaddr_icon'></image>
+        <view class='noaddr_info'>选择其他收货地址</view>
+        <image src='../../images/right.jpg' class='right_icon'></image>
+      </view>
+    </navigator>
+  </view>
+  <view class='nochooseaddr' wx-if="{{!chooseaddr}}">
+    <navigator url="/pages/chooseaddr/chooseaddr" hover-class='navigator-hover'>
+      <view class='toaddr flex_nowarp right_box'>
+        <image src='../../images/addr.png' class='noaddr_icon'></image>
+        <view class='noaddr_info'>请选择收货地址</view>
+        <image src='../../images/right.jpg' class='right_icon'></image>
+      </view>
+    </navigator>
+  </view>
+  <view class='addr_bg'>
+    <image src='../../images/addr_bg.png'></image>
+  </view>
+  <view class='choose_warp'>
+    <view class='pay flex_nowarp'>
+      <view class='text-left'>付款方式</view>
+      <view class='text-right' wx-if="{{payactive!=null}}">{{pay[payactive].title}}</view>
+      <view class='text-right' wx-if="{{payactive==null}}">未选择</view>
+    </view>
+    <view class='paychoose'>
+      <view class='paychoose_item flex_nowarp' bindtap='paychoose' wx:for="{{pay}}" wx:key="index" data-id="{{index}}">
+        <view class='paychoose_item_title'>{{item.title}}</view>
+        <icon type="success" size="26" color="{{item.id==payactive?'':'#fff'}}" />
+      </view>
+    </view>
+    <view class='distribution flex_nowarp'>
+      <view class='text-left'>付款方式</view>
+      <view class='text-right' wx-if="{{distributionactive!=null}}">{{distribution[distributionactive].title}}</view>
+      <view class='text-right' wx-if="{{distributionactive==null}}">未选择</view>
+    </view>
+    <view class='distributionchoose paychoose'>
+      <view class='paychoose_item flex_nowarp' bindtap='distributionchoose' wx:for="{{distribution}}" wx:key="index" data-id="{{index}}">
+        <view class='paychoose_item_title'>{{item.title}}</view>
+        <icon type="success" size="26" color="{{item.id==distributionactive?'':'#fff'}}" />
+      </view>
+    </view>
+    <view class='settlement_prompt'>{{prompt}}</view>
+    <view class='product_list'>
+      <view class='product_title'>商品信息</view>
+      <view class='product_item flex_nowarp' wx:for="{{cartlist}}" wx:key="index">
+        <view class='product_item_img text-center'>
+          <image src='{{item.shopimg}}'></image>
+        </view>
+        <view class='product_item_info'>
+          <view class='product_item_name'>{{item.shopname}}</view>
+          <view class='product_item_choose flex_nowarp'>
+            <view>已选择：</view>
+            <view wx:for="{{item.propertiesdata}}" wX:for-index="idx" wx:for-item="items" wx:key="idx">
+              {{items}}
+              <text>/</text>
+            </view>
+          </view>
+          <view class='product_item_price flex_nowarp'>
+            <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+            ￥{{filter.getPriceFormat(item.price)}}
+            <view class='multiplication'>*</view>
+            {{item.number}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='message'>
+      <input placeholder='请输入您的留言' bindconfirm='messagefun'></input>
+    </view>
+    <view class='money_list'>
+      <view class='money_item flex_warp'>
+        <view>商品金额：</view>
+        <view class='money_item_price'>￥{{filter.getPriceFormat(productprice)}}</view>
+      </view>
+      <view class='money_item flex_warp'>
+        <view>优惠金额：</view>
+        <view class='money_item_price'>￥{{filter.getPriceFormat(preferentialprice)}}</view>
+      </view>
+      <view class='money_item flex_warp'>
+        <view>运费：</view>
+        <view class='money_item_price'>￥{{filter.getPriceFormat(freight)}}</view>
+      </view>
+      <view class='money_item flex_warp'>
+        <view>实际金额：</view>
+        <view class='money_item_price'>￥{{filter.getPriceFormat(totalnum)}}</view>
+      </view>
+    </view>
+    <view class='footer_box flex_nowarp'>
+      <view class='footer_price text-left flex_nowarp'>
+        总价：
+        <view>￥{{filter.getPriceFormat(totalnum)}}</view>
+      </view>
+      <view class='footer_btn text-center' bindtap='submit'>提交订单</view>
+    </view>
+  </view>
+</view>

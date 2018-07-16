@@ -1,0 +1,71 @@
+/* pages/order/order.wxss */
+
+.order_title {
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: #010101;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.order_item {
+  margin-top: 30rpx;
+  background: #fff;
+}
+
+.order_item_head {
+  padding: 20rpx;
+  align-items: center;
+}
+
+.order_item_head_info {
+  width: 550rpx;
+}
+
+.order_item_head_orderNumber {
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.order_item_head_date {
+  font-size: 24rpx;
+  color: #939393;
+}
+
+.order_item_head_status {
+  width: 160rpx;
+  text-align: right;
+  font-size: 26rpx;
+  color: #ad383c;
+}
+
+.order_item_body {
+  padding: 20rpx;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+}
+
+.order_item_body>view {
+  width: 50%;
+}
+
+.order_item_body_price {
+  font-size: 28rpx;
+}
+
+.order_item_body_btn view {
+  font-size: 28rpx;
+  background: #f8f8f8;
+  padding: 18rpx 0;
+  width: 220rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  display: inline-block;
+}
+.nomore{
+  text-align: center;
+  font-size: 30rpx;
+  padding: 20rpx;
+}

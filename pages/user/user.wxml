@@ -1,0 +1,92 @@
+<!--pages/user/user.wxml-->
+<view class='user_box {{erweimamask?"active":""}}'>
+  <view class='user_warp flex_nowarp'>
+    <view class='user_img'>
+      <image src='{{userInfo.avatarUrl}}'></image>
+    </view>
+    <view class='user_info'>
+      <view class='user_name'>{{userInfo.nickName}}</view>
+      <view class='user_balance'>余额：{{balance}}</view>
+    </view>
+  </view>
+  <view class='user_btn flex_nowarp'>
+    <view class='user_btn_item'>
+      <navigator url="/pages/{{commission.url}}/{{commission.url}}" hover-class="navigator-hover">
+        <image src='{{commission.img}}'></image>
+        <text>{{commission.title}}</text>
+      </navigator>
+    </view>
+    <view class='user_btn_item' bindtap='erweima'>
+      <image src='{{erweima.img}}'></image>
+      <text>{{erweima.title}}</text>
+    </view>
+  </view>
+  <view class='erweima_mask {{erweimamask?"active":""}}' bindtap='erweimamask'>
+    <image src='{{erweima.maskimg}}'></image>
+  </view>
+  <view class='order_warp'>
+    <view class='order_title right_box' wx-if="{{!bing}}">
+        <navigator url="/pages/binding/binding" hover-class="navigator-hover">
+          <text>绑定手机号</text>
+          <image src='../../images/user/right.jpg' class='right_img'></image>
+        </navigator>
+      </view>
+    <view class='order_title right_box'>
+      <navigator url="/pages/{{order.url}}/{{order.url}}?id={{order.id}}" hover-class="navigator-hover">
+        <text>{{order.title}}</text>
+        <image src='../../images/user/right.jpg' class='right_img'></image>
+      </navigator>
+    </view>
+    <view class='order_class_btn flex_nowarp'>
+      <view class='order_class_btn_item' wx:for="{{orderclassbtn}}" wx:key="index">
+        <navigator url="/pages/{{item.url}}/{{item.url}}?id={{item.id}}" hover-class="navigator-hover">
+          <view class='text-center order_class_btn_item_img'>
+            <image src='{{item.img}}'></image>
+          </view>
+          <view class='text-center order_class_btn_item_info'>
+            <text>{{item.title}}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class='other_btn flex_warp'>
+    <view class='other_btn_item text-center' wx:for="{{otherbtn}}" wx:key="index">
+      <navigator url='/pages/{{item.url}}/{{item.url}}'>
+        <view class='other_btn_item_img'>
+          <image src='{{item.img}}'></image>
+        </view>
+        <view class='other_btn_item_info'>
+          <text>{{item.title}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class='kefuwarp text-center flex_nowarp'>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+    <button open-type="contact">在线客服</button>
+  </view>
+</view>

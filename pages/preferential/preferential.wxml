@@ -1,0 +1,21 @@
+<!--pages/preferential/preferential.wxml-->
+<view class='preferential_warp'>
+  <view class='wallet_body'>
+    <view class='wallet_body_title flex_nowarp text-center'>
+      <view class='wallet_body_title_mask' style="left: {{activeid * 33.3}}%"></view>
+      <view class="wallet_body_title_item {{activeid==item.id?'active':''}}" wx:for="{{title}}" wx:key="index" bindtap='clicktab' data-id='{{index}}'>
+        {{item.title}}
+      </view>
+    </view>
+    <view class='wallet_body_body' wx-if="{{activeid==item.id}}" wx:for="{{title}}" wx:key="index">
+      <view class='text-center'>
+        {{item.content}}
+      </view>
+    </view>
+  </view>
+  <view class='preferential_warp_footer'>
+    <navigator url='/pages/getpreferential/getpreferential' hover-class='navigator-hover'>
+      + 获得优惠卷 +
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/getpreferential/getpreferential.wxml-->
+<view class='getpreferentia_warp'>
+  <input placeholder='请输入优惠卷码'></input>
+  <view class='getpreferentia_btn'>确认领取</view>
+</view>

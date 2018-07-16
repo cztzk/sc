@@ -1,0 +1,70 @@
+<!--pages/binding/binding.wxml-->
+<view class='login_warp'>
+  <view class='login_form'>
+    <view class='login_form_list text-left'>
+      <view class='flex_nowarp  login_form_item' hidden="{{!login}}">
+        <view class='label'>
+          昵称
+        </view>
+        <view class='input'>
+          <input class='' name="nick" placeholder="请输入昵称" value='{{nick}}' bindblur="nickfun"></input>
+        </view>
+      </view>
+      <view class='flex_nowarp  login_form_item '>
+        <view class='label'>
+          手机号
+        </view>
+        <view class='input'>
+          <input class='' name="tel" placeholder="请输入手机号" value='{{phone}}' bindblur="phonefun"></input>
+        </view>
+      </view>
+      <view class='flex_nowarp  login_form_item '>
+        <view class='label'>
+          密码
+        </view>
+        <view class='input'>
+          <input class='' type='password' name="pass" placeholder="请输入密码" value='{{password}}' bindblur="passfun"></input>
+        </view>
+      </view>
+     
+      <view class='flex_nowarp  login_form_item ' hidden="{{!login}}">
+        <view class='label'>
+          验证码
+        </view>
+        <view class='input'>
+          <input class='' name="msg" placeholder="请输入验证码" value='{{msg}}' bindblur="msgfun"></input>
+        </view>
+        <view class='msg_box ' bindtap='getmsg'>
+          获取验证码
+        </view>
+      </view>
+    </view>
+  </view>
+   <view class='err_box text-center' hidden='{{!err}}'>
+        {{errmsg}}
+      </view>
+  <view class="bindmsg text-center">{{bindmsg}}</view>
+  <view class='login_btn'>
+    <view class='login_btn_item' bindtap='tologin' hidden='{{!login}}'>
+      <view class='active'>
+        已注册，去登录
+      </view>
+    </view>
+    <view class='login_btn_item' bindtap='toregistered' hidden='{{login}}'>
+      <view class='active'>
+        去注册
+      </view>
+    </view>
+    <view class='login_btn_item' bindtap='login' hidden='{{login}}'>
+      <view class='{{check?"active":""}}'>
+        登录
+      </view>
+    </view>
+    <view class='login_btn_item' bindtap='registered' hidden='{{!login}}'>
+      <view class='{{check?"active":""}}'>
+        注册账号
+      </view>
+    </view>
+    
+  </view>
+</view>

@@ -1,0 +1,16 @@
+<!--pages/addsaitu/addsaitu.wxml-->
+<view class='addsaitu_warp'>
+  <textarea placeholder='和大家分享'></textarea>
+  <view class='add_list flex_warp'>
+    <view class='add_tiem ' wx:for="{{chooseimg}}" wx:key="{{index}}" data-id='{{index}}' bindtap='detele'>
+      <image src='{{item}}'></image>
+    </view>
+    <view class='add_tiem ' bindtap='chooseimg' wx-if="{{addnum!=9}}">
+      <image src='../../images/addsaitu.jpg'></image>
+    </view>
+  </view>
+  <view class='addinfo text-center'>还可以上传{{9-addnum}}张图片</view>
+  <view class='addbtn text-center {{addnum!=0?"active":""}}'>
+    <view bindtap='addsaitu'>参加嗮图</view>
+  </view>
+</view>

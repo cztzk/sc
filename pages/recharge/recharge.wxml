@@ -1,0 +1,33 @@
+<!--pages/recharge/recharge.wxml-->
+<view class='recharge_warp'>
+  <view class='recharge_warp_header text-center'>
+    {{rechargetitle}}
+  </view>
+  <view class='recharge_warp_body'>
+    <view class='recharge_list flex_warp'>
+      <view class='echarge_item  text-center {{chooseindex==index?"active":""}}' wx:for="{{rechargelist}}" wx:key="index" bindtap='choosefun'
+      data-index="{{index}}" data-money="{{item.money}}">
+        <view class='cont'>{{item.info}}</view>
+        <view class='song'>{{item.song}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='recharge_warp_footer'>
+    <radio-group class="radio-group text-center" bindchange="radioChange">
+      <label class="radio" wx:for="{{radio}}" wx:key="index">
+        <radio value="{{item.name}}" checked="{{item.checked}}"  disabled='{{disabled}}'/>{{item.value}}
+      </label>
+    </radio-group>
+    <view class='recharge_warp_footer_btn  {{buttonclick?"active":""}}' bindtap='payfun'>确认金额并支付</view>
+  </view>
+  <view class='explain'>
+    <view class='explain_title'>
+      {{explain.title}}
+    </view>
+    <view class='explain_list'>
+      <view class='explain_item' wx:for="{{explain.info}}" wx:key="index">
+        <view class=''> {{index+1}}.{{item.cont}}</view>
+      </view>
+    </view>
+  </view>
+</view>

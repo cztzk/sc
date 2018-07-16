@@ -1,0 +1,54 @@
+/* pages/chooseaddr/chooseaddr.wxss */
+@import '../../template/cascade.wxss';
+
+.chooseaddr {
+  padding: 30rpx 18rpx 18rpx;
+}
+
+.input_box {
+  padding: 25rpx 20rpx;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+
+.input_box input {
+  font-size: 30rpx;
+  color: #6b6b6b;
+}
+
+.picker_warp {
+  padding: 25rpx 20rpx;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+
+.picker_warp>view {
+  width: 33.3%;
+  text-align: center;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+  color: #000;
+}
+
+.picker_warp>view:last-child {
+  border-right: 1px solid transparent;
+}
+
+.saveaddr_btn {
+  padding: 30rpx 10rpx;
+}
+
+.saveaddr_btn>view {
+  padding: 25rpx 0;
+  background: #09bb07;
+  border-radius: 15rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+}
+.errmsg{
+  font-size: 36rpx;
+  text-align: center;
+  color: red;
+}

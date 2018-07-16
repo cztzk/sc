@@ -1,0 +1,61 @@
+<!--pages/cart/cart.wxml-->
+<view class='cart_page'>
+  <view class='noproduct' wx-if="{{noproduct}}">
+    <image src='../../images/cart_bg.jpg'></image>
+    <view class='noproduct_info'>
+      购物车空了
+    </view>
+    <view class='noproduct_btn'>
+      <navigator url='/pages/allproduct/allproduct'>
+        再去逛逛
+      </navigator>
+    </view>
+  </view>
+  <view class='cart_list' wx-if="{{!noproduct}}">
+    <view class='cart_item flex_nowarp' wx:for="{{cartlist}}" wx:key="index">
+      <block>
+        <view class='cart_item_icon'>
+          <icon type="success" size="24" color="{{item.Selected?'red':'#eee'}}" bindtap='selectfun' data-index='{{index}}' />
+        </view>
+        <view class='cart_item_img text-center'>
+          <image src='{{item.shopimg}}'></image>
+        </view>
+        <view class='cart_item_info flex_warp'>
+          <view class='cart_item_info_name'>{{item.shopname}}</view>
+          <view class='cart_item_info_size flex_warp'>
+            <view>已选择：</view>
+            <view wx:for="{{item.propertiesdata}}" wx-for-item="items" wx:for-index="idx" wx:key="idx">
+              {{item}}<text>/</text>
+            </view>
+          </view>
+          <view class='cart_item_info_num'>
+            <view class="stepper flex_nowarp">
+              <!-- 减号 -->
+              <text bindtap="bindMinus" data-index='{{index}}'>-</text>
+              <!-- 数值 -->
+              <view>{{item.number}}</view>
+              <!-- 加号 -->
+              <text bindtap="bindPlus" data-index='{{index}}'>+</text>
+            </view>
+          </view>
+        </view>
+        <view class='cart_item_price'>
+          <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+          <view>￥{{filter.getPriceFormat(item.price*item.number)}}</view>
+        </view>
+        <view class='detele' bindtap='detelefun' data-index='{{index}}'>
+          <image src='../../images/detele.jpg'></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='cart_footer flex_nowarp'>
+    <view class='cart_footer_choose flex_nowarp'>
+      <icon type="success" size="24" color="{{footerSelected?'red':'#eee'}}" bindtap='allselectfun' />
+      <view>全选</view>
+    </view>
+    <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+    <view class='Total'>合计：￥{{filter.getPriceFormat(totalnum)}}</view>
+    <view class='toorder' bindtap='toorder'>去结算({{selectnum}})</view>
+  </view>
+</view>

@@ -1,0 +1,140 @@
+<!--index.wxml-->
+<view class='index_warp'>
+  <!-- 搜索框 -->
+  <view class="search flex_nowarp">
+    <view class="search-left ">
+      <image src="{{logo}}"></image>
+    </view>
+    <view class="search-right flex_nowarp ">
+      <input placeholder="{{searchplaceholder}}" placeholder-class="search-placeholder" />
+      <icon class="searchcion" size='18' type='search'></icon>
+    </view>
+  </view>
+  <!-- 轮播 -->
+  <view class='banner_warp'>
+    <swiper class="banner" indicator-dots="true" circular="true" indicator-color="rgba(255,255,255,.6)" indicator-active-color="#fff" autoplay="true" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.picUrl}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 导航条 -->
+  <view class='nav_warp'>
+    <view class='nav_list flex_warp'>
+      <view class='nav_item text-center' wx:for="{{navList}}" wx:key="index">
+        <navigator url="/pages/{{item.url}}/{{item.url}}" hover-class="navigator-hover">
+          <view class='nav_img'>
+            <image src="{{item.img}}"></image>
+          </view>
+          <view class='nav_title'>
+            <text>{{item.title}}</text>
+          </view>
+        </navigator>
+      </view>
+      <view class='nav_item nav_kefu text-center'>
+        <view class='nav_img'>
+          <image src="../../images/nav_icon_8.png"></image>
+        </view>
+        <view class='nav_title'>
+          <text>在线客服</text>
+        </view>
+        <view class='index_kefu'>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+          <contact-button type="default-light" size="20" session-from="weapp"></contact-button>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 推荐图展示 -->
+  <view class='recommend_warp'>
+    <view class='recommend_datu'>
+      <image src='{{datu}}'></image>
+    </view>
+    <view class='recommend_xiaotu'>
+      <image src='{{xiaotu}}'></image>
+    </view>
+    <view class='recommend'>
+      <view class='recommend_lsit flex_warp'>
+        <view class='recommend_item' wx:for="{{recommendLsit}}" wx:key="index">
+          <navigator url='/pages/{{item.url}}/{{item.url}}?id={{item.id}}'>
+            <view>
+              <image src='{{item.img}}' alt="{{item.title}}"></image>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class='class-list flex_warp '>
+      <view class='class-item ' wx:for="{{classList}}" wx:key="index">
+        <view class='class-item-left class-item-box flex_warp' wx-if="{{index % 2 == 0 ? true:false }}">
+          <view class='class-item-info text-center'>
+            <view class='class-item-title'>
+              {{item.eng}}
+            </view>
+            <view class='class-item-eng'>
+              {{item.title}}
+            </view>
+          </view>
+          <view class='class-item-img'>
+            <image src='{{item.img}}'></image>
+          </view>
+        </view>
+        <view class='class-item-right class-item-box flex_warp' wx-if="{{index % 2 != 0 ? true:false }}">
+          <view class='class-item-img'>
+            <image src='{{item.img}}'></image>
+          </view>
+          <view class='class-item-info text-center'>
+            <view class='class-item-title'>
+              {{item.eng}}
+            </view>
+            <view class='class-item-eng'>
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 热卖产品 -->
+  <view class='hot-box'>
+    <view class='hot-title text-center'>{{hotTitle}}</view>
+    <view class='hot-list flex_warp'>
+      <view class='hot-item' wx:for="{{hotlist}}" wx:key="index">
+        <navigator url='/pages/productdetail/productdetail?id={{item.id}}'>
+          <view class='hot-img'>
+            <image src='{{item.pic}}'></image>
+          </view>
+          <view class='hot-pin'>{{item.name}}</view>
+          <view class='hot-name'>{{item.characteristic}}</view>
+          <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+          <view class='hot-price'>￥{{filter.getPriceFormat(item.originalPrice)}}</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

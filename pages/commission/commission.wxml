@@ -1,0 +1,14 @@
+<!--pages/commission/commission.wxml-->
+<view class='wallet_warp'>
+  <view class='wallet_header text-center'>
+    <wxs module="filter" src="../../wxs/filter/filter.wxs"></wxs>
+    <view class='wallet_header_total'>￥{{filter.getPriceFormat(total)}}</view>
+    <view class='wallet_header_btn' bindtap='commission'>
+        佣金提现
+    </view>
+    <view class='wallet_header_info'>
+      <image src='../../images/wallet.png'></image>
+      <text>可提现佣金为零，不可提现</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+/* pages/addsaitu/addsaitu.wxss */
+.addsaitu_warp{
+  background: #f2f2f2;
+  min-height: 100vh;
+}
+.addsaitu_warp textarea{
+  width: 750rpx;
+  background: #fff;
+  padding: 30rpx 25rpx;
+  font-size: 30rpx;
+}
+.add_list{
+  padding: 30rpx 0rpx 0;  
+}
+.add_tiem{
+  text-align: center;
+  width: 250rpx;
+  box-sizing: border-box;
+  padding: 15rpx;
+}
+.add_tiem image{
+  width:200rpx;
+  height: 200rpx;
+  border: 1px solid #ddd;
+}
+.addinfo{
+  font-size: 24rpx;
+  color: #757575;
+  margin: 15rpx 0;
+}
+.addbtn{
+  padding:0 25rpx 25rpx;
+}
+.addbtn view{
+  font-size: 36rpx;
+  color: #757575;
+  background: #ddd;
+  border-radius: 20rpx;
+  padding: 20rpx 0;
+}
+.addbtn.active view{
+ color: #fff;
+  background: #09bb07;
+}
